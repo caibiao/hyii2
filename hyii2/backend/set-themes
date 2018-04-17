@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+try{
+    $theme_name = $argv[1];
+    $root = str_replace('\\', '/', __DIR__);
+    @mkdir(dirname($root . '/config/theme-local.php'), 0777, true);
+    file_put_contents($root . '/config/theme-local.php', file_get_contents($root . '/themes/' .$theme_name. '/theme-local.php'));
+    echo 'success';
+}catch (Exception $e){
+    print_r($e->getMessage());
+}

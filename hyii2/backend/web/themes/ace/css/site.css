@@ -1,0 +1,45 @@
+.menu-text {
+    padding-left:5px;
+}
+
+.theme-list ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.theme-list ul li{
+    margin-right: 10px;
+    list-style-type: none;
+    float: left;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 4px #AAAAAA;
+    background-color: #EEE;
+}
+
+.theme-list ul li img{
+    width: 250px;
+    height: 200px;
+}
+
+.theme-desc {
+    padding: 5px;
+    padding-bottom: 5px;
+}
+
+.theme-name {
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+}
+
+.wellcome span{
+    display: block;
+    font-size: 24px;
+    color: #0073B2;
+    text-align: center;
+    width: 100%;
+}
+.modal-tips .modal-body .glyphicon-remove-circle {
+    font-size: 50px;
+    color: #dd4b39;
+}

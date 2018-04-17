@@ -1,0 +1,51 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\LinkPager;  
+
+/* @var $this yii\web\View */
+/* @var $searchModel backend\models\ArticleSortSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Article Sorts';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="article-sort-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <p>
+        <?= Html::a('Create Article Sort', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+
+		'columns' => [
+   
+		['class' => 'yii\grid\SerialColumn'],
+            'id',
+   
+			'name',
+			
+'sort_id',
+ 
+			'order',
+
+			'inner_no',
+ 
+			// 'language',
+ 
+			// 'datetime',
+  
+			// 'orders',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); 
+	
+	
+	?>
+</div>
