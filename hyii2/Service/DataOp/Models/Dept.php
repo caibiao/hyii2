@@ -2,6 +2,7 @@
 
 namespace Service\DataOp\Models;
 
+use Service\Base\ActiveRecord;
 use Yii;
 
 /**
@@ -43,7 +44,7 @@ use Yii;
  * @property string $user_no
  * @property string $intro_no
  */
-class Dept extends \yii\db\ActiveRecord
+class Dept extends ActiveRecord
 {
     /**
      * 币种

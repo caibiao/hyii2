@@ -4,7 +4,7 @@ namespace backend\Modules\DataOp\Controllers;
 
 use Yii;
 use Service\DataOp\Models\Dept;
-use Service\DataOp\Models\Search\DeptSearch;
+use Service\DataOp\Homeowner;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,10 +35,11 @@ class DeptController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new DeptSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $search = Homeowner::search(Yii::$app->request->get());
+        $dataProvider = $search->search();
+
         return $this->render('index', [
-            'searchModel' => $searchModel,
+            'searchModel' => $search,
             'dataProvider' => $dataProvider,
         ]);
     }
