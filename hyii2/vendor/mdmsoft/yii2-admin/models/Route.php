@@ -109,6 +109,7 @@ class Route extends \yii\base\Object
         } elseif (is_string($module)) {
             $module = Yii::$app->getModule($module);
         }
+
         $key = [__METHOD__, $module->getUniqueId()];
         $cache = Configs::instance()->cache;
         if ($cache === null || ($result = $cache->get($key)) === false) {

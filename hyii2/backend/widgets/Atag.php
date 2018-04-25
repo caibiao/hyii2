@@ -69,4 +69,23 @@ class Atag extends BootstrapWidget
 
         return $content;
     }
+    /**
+     * 新增按钮
+     * @param $route
+     * @param string $text
+     * @return string
+     */
+    public static function addButton($route = 'add', $text = '新增')
+    {
+        try {
+            return static::widget([
+                'text' => $text,
+                'route' => [$route],
+                'visabled' => false,
+                'options' => ['class' => 'btn btn-success btn-w82 ml5'],
+            ]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }
