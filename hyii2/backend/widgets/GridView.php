@@ -8,7 +8,7 @@
  * @date      2018/3/15 10:56
  */
 
-namespace abiao\Order\Widgets;
+namespace abiao\Widgets;
 
 
 use yii\helpers\ArrayHelper;

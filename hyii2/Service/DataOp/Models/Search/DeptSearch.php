@@ -36,6 +36,8 @@ class DeptSearch extends Dept
         return [
             'maxCoins' => '可用网币',
             'minCoins' => '可用网币',
+            'no' => '部门编号',
+            'name' => '部门名称',
         ];
     }
 

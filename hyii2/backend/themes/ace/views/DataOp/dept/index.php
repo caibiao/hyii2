@@ -1,66 +1,41 @@
 <?php
+/**
+ * 列表页
+ * @copyright 本软件和相关文档仅限 安乐窝 和/或其附属公司开发团队内部交流使用，
+ *            并受知识产权法的保护。除非公司以适用法律明确授权，否则不得以任何形
+ *            式、任何方式使用、拷贝、复制、翻译、广播、修改、授权、传播、分发、
+ *            展示、执行、发布或显示本软件和相关文档的任何部分。
+ * @author    林猛锋<linmengfeng@anlewo.com>
+ */
 
-use yii\helpers\Html;
-use yii\grid\GridView;
+$this->title = '大客户管理-大客户列表';
 
-/* @var $this yii\web\View */
-/* @var $searchModel Service\DataOp\Models\Search */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'Depts';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="dept-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Dept', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'no',
-            'name',
-            'name_en',
-            'name_ru',
-            // 'name_big',
-            // 'parent_no',
-            // 'country',
-            // 'area:ntext',
-            // 'inner_no',
-            // 'role',
-            // 'datetime:datetime',
-            // 'service_proportion',
-            // 'consume_proportion',
-            // 'coins_web',
-            // 'coins',
-            // 'sms_nums',
-            // 'bank',
-            // 'account',
-            // 'account_name',
-            // 'mobile',
-            // 'tel',
-            // 'address',
-            // 'postalcode',
-            // 'email:email',
-            // 'stock',
-            // 'order_credit',
-            // 'goods_credit',
-            // 'award_flag',
-            // 'discount',
-            // 'currency_id',
-            // 'flag',
-            // 'has_coins',
-            // 'user_no',
-            // 'intro_no',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-</div>
+<!-- Content Header (Page header) -->
+<section class="content-header search-content-header">
+    <h1>
+        部门管理
+        <span class="btnGroupBox">
+                <?= \abiao\widgets\Atag::addButton() ?>
+        </span>
+    </h1>
+    <ol class="breadcrumb">
+        <li>部门管理</li>
+        <li class="active"><a href="">部门列表</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box search-box" id="searchBox">
+        <!-- 搜索表单开始 -->
+        <?= $this->render("search", [
+            'searchModel' => $searchModel,
+        ]); ?>
+    </div>
+    <div class="box box-solid no-mb">
+        <!-- 搜索表单开始 -->
+        <?= $this->render("list", [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]); ?>
+    </div>
+</section>

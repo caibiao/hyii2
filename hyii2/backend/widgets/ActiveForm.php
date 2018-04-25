@@ -9,7 +9,7 @@
  * @date      2018/3/6 09:39
  */
 
-namespace abiao\Order\Widgets;
+namespace abiao\widgets;
 use abiao\widgets\Atag;
 use kartik\daterange\DateRangePicker;
 use kartik\field\FieldRange;
